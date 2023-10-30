@@ -21,12 +21,8 @@ resource "aws_lb_listener" "alb-listener" {
   protocol          = "HTTP"
 
   default_action {
-  #  type = "fixed-response"
     type = "forward"
     target_group_arn = aws_lb_target_group.web_app-tg.arn
-    #fixed_response {
-    #  content_type = "text/plain"
-    #  status_code  = "200"
   }
 }
 
